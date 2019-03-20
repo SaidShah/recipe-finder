@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DefaultNutrition from './DefaultNutrition'
 
 class NutritionContainer extends Component {
 
@@ -6,14 +7,24 @@ class NutritionContainer extends Component {
     ingredient:''
   }
 
-  handleChange=()=>{
-
+  handleChange=(e)=>{
+    this.setState({
+      ingredient:e.target.value
+    })
   }
 
-  handleSubmit=()=>{
-
+  handleSubmit=(e, ingredient)=>{
+    e.preventDefault()
+    if(ingredient){
+      this.props.getNutrition(ingredient)
+    }
+    this.setState({ingredient: ''})
   }
-  
+
+  showNutrition=()=>{
+    
+  }
+
   render() {
     return (
       <>
@@ -26,6 +37,7 @@ class NutritionContainer extends Component {
         </form>
         <hr className="form-hr"/>
       </div>
+      <DefaultNutrition/>
       </>
     );
   }

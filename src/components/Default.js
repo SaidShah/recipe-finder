@@ -5,7 +5,7 @@ import imgTwo from '../images/imgTwo.png'
 const Default = () => (
   <div className="default-images">
     <img src={imgOne} alt="ingredients" className='img'/>
-    <img src={imgTwo} alt="ingredients" className='img Two'/>
+    <img src={imgTwo} alt="ingredient" className='img'/>
   </div>
 );
 
