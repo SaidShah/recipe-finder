@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
         <div className="content">
 
         </div>
-        <div id="edamam-badge" data-color="white"></div>
+        <Footer/>
       </div>
 
     );

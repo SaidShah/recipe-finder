@@ -1,51 +1,32 @@
 import React from 'react';
 
-const Navbar = ({}) => (
+const Navbar = () => (
 
-  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <nav className="navbar navbar-expand-lg navbar-dark primary-color">
 
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a className="navbar-brand text-dark font-weight-bold" href="/">Recipe Finder</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
       aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="basicExampleNav">
+    <div className="collapse navbar-collapse" id="basicExampleNav">
 
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/recipes">Recipes
-            <span class="sr-only">(current)</span>
-          </a>
+      <ul className="navbar-nav mr-auto ">
+        <li className="nav-item">
+          <a className="nav-link text-dark font-weight-bold" href="/recipes">Recipes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/nutrition">Nutrition</a>
+        <li className="nav-item">
+          <a className="nav-link text-dark font-weight-bold" href="/nutrition">Nutrition</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <li className="nav-item">
+          <a className="nav-link text-dark font-weight-bold" href="/inginfo">Ingredient Info</a>
         </li>
 
       </ul>
 
-
-      <form class="form-inline">
-        <div class="md-form my-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
-        </div>
-      </form>
     </div>
 
   </nav>
