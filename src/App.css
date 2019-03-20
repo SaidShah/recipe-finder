@@ -1,7 +1,15 @@
-.content{
+.row{
+  display: flex;
+}
 
+.column{
+  flex: auto;
 }
 
 .text-black{
   color: black;
+}
+
+.app-div{
+  margin: 5px;
 }
