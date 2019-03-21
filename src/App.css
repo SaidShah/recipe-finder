@@ -4,7 +4,7 @@ body{
 
 input{
   margin-left: 1vw;
-  width: 70%;
+  width: 60%;
 }
 
 form{
@@ -88,4 +88,8 @@ form{
 
 .food-ul{
   list-style-type: none;
+}
+
+.table-div{
+  overflow-x: auto;
 }

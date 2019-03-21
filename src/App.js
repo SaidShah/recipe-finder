@@ -5,12 +5,14 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import RecipesContainer from './components/RecipesContainer'
 import NutritionContainer from './components/NutritionContainer'
+import Default from './components/Default'
 
 class App extends Component {
 
   state={
     allFoods: [],
-    nutrition: ''
+    nutrition: '',
+    name: ''
   }
 
   getFoods=(givenArr)=>{
@@ -21,7 +23,9 @@ class App extends Component {
   }
 
   getNutrition=(givenIng)=>{
-    console.log(givenIng)
+    fetch(`https://api.edamam.com/api/nutrition-data?app_id=${process.env.REACT_APP_EDAMAM_NUTRITION_API_ID}&app_key=${process.env.REACT_APP_EDAMAM_NUTRITION_API_KEY}&ingr=${givenIng.replace(" ", "%20")}`)
+    .then(res => res.json())
+    .then(response => this.setState({nutrition: response, name: givenIng}))
   }
 
   render() {
@@ -33,7 +37,8 @@ class App extends Component {
 
       <Switch>
         <Route path="/recipes" render={()=><RecipesContainer getFoods={this.getFoods} foods={this.state.allFoods}/>}/>
-        <Route path="/nutrition" render={()=><NutritionContainer getNutrition={this.getNutrition} nutritionInfo={this.state.nutrition}/>}/>
+        <Route path="/nutrition" render={()=><NutritionContainer getNutrition={this.getNutrition} nutritionInfo={this.state.nutrition} name={this.state.name}/>}/>
+        <Route path="/" render={()=><Default/>}/>
       </Switch>
 
       </div>
